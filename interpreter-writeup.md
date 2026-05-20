@@ -111,7 +111,8 @@ ssh sedric@10.129.55.240
 cat ~/user.txt
 ```
 
-<img width="355" height="37" alt="image-6" src="https://github.com/user-attachments/assets/b0e2077e-f20c-4525-83b3-bfc63820d816" />
+<img width="355" height="37" alt="image" src="https://github.com/user-attachments/assets/1f5d66fe-73d3-4a9d-99ec-c0106b7acc1c" />
+
 
 
 ---
