@@ -99,7 +99,8 @@ Default iterations for Mirth Connect 4.4.0 are **600,000**. Steps:
 hashcat -m 10900 hash.txt rockyou.txt
 ```
 
-<img width="812" height="113" alt="image-5" src="https://github.com/user-attachments/assets/1418d009-155e-44a8-a1ab-974f5019d820" />
+<img width="355" height="37" alt="image" src="https://github.com/user-attachments/assets/9f158b81-463e-4fe5-ac66-bb9ee4ce677a" />
+
 
 
 ### User Flag
